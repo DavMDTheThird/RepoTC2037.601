@@ -18,3 +18,9 @@ Para este problema fue necesario desarrollar un diagrama que definiera las regla
 <img src="automata.png">
 
 Al momento de ejecutar el programa, es necesario contar con los archivos de prueba en la misma carpeta para que sea posible correrlos dentro del programa principal mediante la siguiente linea de código: `(load "arithmetic-test-v4.rkt)`.
+
+Tambien es posible introducir manualmente la expresion matematica que se desea desarrollar, como por ejemplo `(arithmetic-lexer "<expresion a evaluar>")`.
+
+Lo que se esperará de respuesta del programa es simplemente le desarrollo y categorizacion de la expresion dada, como por ejemplo: `(arithmetic-lexer "6 +2*(3-a)")`. Nos da el resultado de: `'(("6" int) ("+" op) ("2" int) ("*" op) ("(" par_open) ("3" int) ("-" op) ("a" var) (")" par_close))` . Es decir que nos regresa una lista con cada elemento y su tipo de forma ordenada, ignorando espacios. 
+
+Cabe detallar que no solo sirve para hacer eso dado que evalua si la expresion dada es correcta dadas las reglas gramaticales en la escritura matemática. Por lo que si introducimos `(arithmetic-lexer "6 +2*(3-a)")` nos da de resultado `#f`, falso o invalido, dado a que esa expresion no es valida u aceptada ya que le faltan argumentos, o está mal escrita.
