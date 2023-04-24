@@ -1,0 +1,20 @@
+# Activity 3.2 - DOCUMENTACIÓN
+
+
+### Names:
+- David Medina Domínguez (A01783155)
+- Angel Afonso Castellanos (A01782545)
+
+#
+
+## Manual de Usuario
+
+El programa fue desarrollado en lenguaje de programación RACKET, el cual es necesario instalar previo a la ejecución del programa en cuestión. Se puede correr en Dr. Racket o directamente en Visual Studio Code con sus respectivas extensiones. 
+
+Para correr el programa no se tiene que hacer nada del otro mundo, simplemente abrir la terminal en la cual se desee ejecutar, encontrarse en la carpeta donde esta guardado el archivo y escribir "racket -it " seguido del nobre del archivo con extensión .rkt. 
+
+Para este problema fue necesario desarrollar un diagrama que definiera las reglas y los estados en los que serían válidas las trancisiones del autómata:
+
+<img src="automata.png">
+
+Al momento de ejecutar el programa, es necesario contar con los archivos de prueba en la misma carpeta para que sea posible correrlos dentro del programa principal mediante la siguiente linea de código: `(load "arithmetic-test-v4.rkt)`.
