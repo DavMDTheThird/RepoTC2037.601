@@ -1,0 +1,5 @@
+<span class="function">print</span>
+<span class="punctuation">(</span>
+<span class="string">"Hola Mundo!!"</span>
+<span class="punctuation">)</span>
+<span class="comment"># Esto es un comentario</span>

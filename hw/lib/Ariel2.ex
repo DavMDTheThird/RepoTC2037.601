@@ -109,4 +109,10 @@ defmodule Hw.Ariel2 do
 #    end
 #  end
 
+
+  def multListPos(lista), do: do_multListPos(lista, 1, [])#
+
+  defp do_multListPos([], multiplicador, return_list), Enum.reverse(return_list)
+  defp do_multListPos([head | tail], multiplicador, return_list), do: do_multListPos(tail, multiplicador + 1, [head * multiplicador | return_list] )
+
 end
