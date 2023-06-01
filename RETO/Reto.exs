@@ -25,6 +25,7 @@ defmodule R do
 
 
   def pylexic(in_filename, out_filename) do
+    {time, _result} = :timer.tc(fn ->
     data = in_filename
           |> File.stream!() # Read the file, line by line
           |> Enum.map(&python_token(&1)) # Call a function with each line read
@@ -33,6 +34,8 @@ defmodule R do
           |> Enum.join("\<br\>\n")
 
     File.write(out_filename, Enum.join([@html_st, data, @html_nd])) # Store the results in a new file
+    end)
+    IO.puts("Tiempo de ejecucion: #{time} microsegundos")
   end
 
   defp python_token(line), do: do_python_token(line, [])
