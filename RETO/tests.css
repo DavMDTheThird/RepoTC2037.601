@@ -1,0 +1,39 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+}
+span{
+    color: wheat;
+}
+
+.reserved_word{
+    color: blueviolet;
+}
+
+.string{
+    color: green;
+}
+
+.function{
+    color: yellow;
+}
+
+.punctuation{
+    color: goldenrod;
+}
+
+.comment{
+    color: gray;
+}
+
+.operator{
+    color: firebrick;
+}
+
+.number{
+    color: orange;
+}
+
+.variable{
+    color: white;
+}
