@@ -2,8 +2,8 @@
 import math
 
 # Print "Hello World"
-introduccion = "Hola mundo"
-print(introduccion)
+Greetings = "Hola mundo"
+print(Greetings)
 
 # print the numbers from 1 to 10
 for i in range(10):
@@ -31,11 +31,11 @@ class Tree:
     def search(self, value):
         if value < self.value:
             if self.left is None:
-                return str(value)+" Not Found"
+                return str(value) + " Not Found"
             return self.left.search(value)
         elif value > self.value:
             if self.right is None:
-                return str(value)+" Not Found"
+                return str(value) + " Not Found"
             return self.right.search(value)
         else:
             return str(self.value) + ' is found'
@@ -71,4 +71,4 @@ class Calculator:
         return math.sqrt(a)
     
     def toFloat(self, a):
-        return a/1.0
+        return a / 1.0

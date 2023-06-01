@@ -17,9 +17,12 @@ defmodule R do
   @spaces ~r/^\s+/ # White Spaces, tabs and newlines
   @variables ~r/^[a-zA-Z_][a-zA-Z0-9_]*/ # Variable names in python
 
-  @st_html "\<span class\=\""
+  @st_html "\t\<span class\=\""
   @md_html "\"\>"
   @nd_html "\<\/span\>\n"
+  @html_st '<!DOCTYPE html>\n<html lang="en">\n<head>\n\t<meta charset="UTF-8">\n\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<link rel="stylesheet" href="../RETO/tests.css">\n\t<title>Test Resaltador de Python</title>\n</head>\n<body>\n'
+  @html_nd '</body>\n</html>'
+
 
   def pylexic(in_filename, out_filename) do
     data = in_filename
@@ -27,9 +30,9 @@ defmodule R do
           |> Enum.map(&python_token(&1)) # Call a function with each line read
           # |> Enum.to_list()
           # |> IO.inspect()
-          |> Enum.join("")
+          |> Enum.join("\<br\>\n")
 
-    File.write(out_filename, data) # Store the results in a new file
+    File.write(out_filename, Enum.join([@html_st, data, @html_nd])) # Store the results in a new file
   end
 
   defp python_token(line), do: do_python_token(line, [])
@@ -46,7 +49,7 @@ defmodule R do
       Regex.match?(@reserved_words, line) ->
         match = Regex.run(@reserved_words, line, capture: :first)
         line = Regex.replace(@reserved_words, line, "")
-        new_line = Enum.join([@st_html, "reserved word", @md_html, List.first(match), @nd_html])
+        new_line = Enum.join([@st_html, "reserved_word", @md_html, List.first(match), @nd_html])
         do_python_token(line, [new_line|rtlist])
 
 
@@ -109,5 +112,6 @@ defmodule R do
 
 end
 
-# R.pylexic("test1.py","test1_answear")
-# R.pylexic("test2.py","test2_answear")
+# R.pylexic("test1.py","test1_answear.html")
+# R.pylexic("test2.py","test2_answear.html")
+# R.pylexic("test3.py","test3_answear.html")

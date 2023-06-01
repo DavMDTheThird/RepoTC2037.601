@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../RETO/tests.css">
+	<title>Test Resaltador de Python</title>
+</head>
+<body>
+	<span class="reserved_word">import</span>
+	<span class="variable">pandas</span>
+	<span class="variable">as</span>
+	<span class="variable">pd</span>
+<br>
+	<span class="reserved_word">import</span>
+	<span class="variable">numpy</span>
+	<span class="variable">as</span>
+	<span class="variable">np</span>
+<br>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">get_sightings</span>
+	<span class="punctuation">(</span>
+	<span class="variable">filename</span>
+	<span class="punctuation">,</span>
+	<span class="variable">focusanimal</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+<br>
+	<span class="comment"># Load table</span>
+<br>
+	<span class="variable">tab</span>
+	<span class="operator">=</span>
+	<span class="variable">pd</span>
+	<span class="punctuation">.</span>
+	<span class="variable">read_csv</span>
+	<span class="punctuation">(</span>
+	<span class="variable">filename</span>
+	<span class="punctuation">)</span>
+<br>
+<br>
+	<span class="comment"># Find number of records and total count of animals seen</span>
+<br>
+	<span class="operator">is</span>
+	<span class="variable">focus</span>
+	<span class="operator">=</span>
+	<span class="punctuation">(</span>
+	<span class="variable">tab</span>
+	<span class="punctuation">[</span>
+	<span class="string">'Animal'</span>
+	<span class="punctuation">]</span>
+	<span class="operator">=</span>
+	<span class="operator">=</span>
+	<span class="variable">focusanimal</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="variable">totalrecs</span>
+	<span class="operator">=</span>
+	<span class="variable">np</span>
+	<span class="punctuation">.</span>
+	<span class="variable">sum</span>
+	<span class="punctuation">(</span>
+	<span class="operator">is</span>
+	<span class="variable">focus</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="variable">meancount</span>
+	<span class="operator">=</span>
+	<span class="variable">np</span>
+	<span class="punctuation">.</span>
+	<span class="variable">mean</span>
+	<span class="punctuation">(</span>
+	<span class="variable">tab</span>
+	<span class="punctuation">[</span>
+	<span class="string">'Count'</span>
+	<span class="punctuation">]</span>
+	<span class="punctuation">[</span>
+	<span class="operator">is</span>
+	<span class="variable">focus</span>
+	<span class="punctuation">]</span>
+	<span class="punctuation">)</span>
+<br>
+<br>
+	<span class="comment"># Return num of records and animals seen</span>
+<br>
+	<span class="reserved_word">return</span>
+	<span class="variable">totalrecs</span>
+	<span class="punctuation">,</span>
+	<span class="variable">meancount</span>
+</body>
+</html>
