@@ -7,9 +7,44 @@
 
 ## Solucion Planteada:
 
+```{elixir}
+codigo
+```
+
 Reflexiona sobre la solución planteada, los algoritmos implementados y sobre el tiempo de ejecución de estos.
-Calcula la complejidad de tu algoritmo basada en el número de iteraciones y contrástala con el tiempo estimado en el punto anterior.
-Plasma en un breve reporte de una página (en formato Markdown) las conclusiones de tu reflexión en los puntos 6 y 7. Agrega además una breve reflexión sobre las implicaciones éticas que el tipo de tecnología que desarrollaste pudiera tener en la sociedad.
+
+
+
+A continuacion se presenta la complejidad de cada una de las funciones que fueron utilizadas en el desarrollo del resaltador de sintáxis.
+
+### File.stream
+
+La complejidad temporal es constante, O(1), ya que solo crea un objeto de flujo y no realiza ninguna lectura o procesamiento real del archivo.
+
+### Enum.map
+
+La complejidad temporal depende del tamaño de la enumeración y de la complejidad de la función de transformación que se aplica a cada elemento. Si consideramos el tamaño de la enumeración como n y la complejidad de la función de transformación como O(f), donde f es el tiempo que tarda en ejecutarse la función de transformación en un solo elemento, entonces la complejidad temporal de Enum.map es O(n * f).
+
+### Enum.join
+
+La complejidad temporal depende del tamaño de la enumeración y de la longitud de cada elemento en la enumeración. Si consideramos el tamaño de la enumeración como n y la longitud promedio de los elementos como m, entonces la complejidad temporal de Enum.join es O(n * m).
+
+### Regex.match?
+
+La complejidad temporal depende del patrón de expresión regular y la longitud de la cadena de entrada. La complejidad de la coincidencia de expresiones regulares puede variar según el patrón y el motor de regex utilizado. Basicamente sería O(n).
+
+### Regex.replace
+
+La complejidad temporal depende del patrón de expresión regular, la longitud de la cadena de entrada y la complejidad de la transformación realizada. La complejidad de reemplazo de expresiones regulares puede variar según el patrón y el motor de regex utilizado. Basicamente sería O(n).
+
+### Regex.run
+
+La complejidad temporal depende del tamaño de la cadena de entrada y la complejidad del patrón de expresión regular. La complejidad de coincidencia de expresiones regulares puede variar según el patrón y el motor de regex utilizado. Basicamente sería O(n).
+
+### IO.puts
+
+La complejidad temporal es generalmente considerada como O(1), es decir, constante. Esto se debe a que la función simplemente imprime el texto proporcionado en la salida estándar y agrega un salto de línea al final. El tiempo que lleva imprimir una cadena de texto y un carácter de nueva línea no depende del tamaño de la cadena.
+
 <br>
 
 Con el uso y desarrollo de tecnología como un resultador de sintáxis puede presentar diversas implicaciones éticas en la sociedad, un ejemplo de ellas pueden ser las siguieentes:
