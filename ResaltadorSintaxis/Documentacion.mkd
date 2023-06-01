@@ -14,7 +14,6 @@ codigo
 Reflexiona sobre la solución planteada, los algoritmos implementados y sobre el tiempo de ejecución de estos.
 
 
-
 A continuacion se presenta la complejidad de cada una de las funciones que fueron utilizadas en el desarrollo del resaltador de sintáxis.
 
 ### File.stream
@@ -46,6 +45,8 @@ La complejidad temporal depende del tamaño de la cadena de entrada y la complej
 La complejidad temporal es generalmente considerada como O(1), es decir, constante. Esto se debe a que la función simplemente imprime el texto proporcionado en la salida estándar y agrega un salto de línea al final. El tiempo que lleva imprimir una cadena de texto y un carácter de nueva línea no depende del tamaño de la cadena.
 
 <br>
+
+## Implicaciones éticas
 
 Con el uso y desarrollo de tecnología como un resultador de sintáxis puede presentar diversas implicaciones éticas en la sociedad, un ejemplo de ellas pueden ser las siguieentes:
 
