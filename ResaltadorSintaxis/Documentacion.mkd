@@ -66,6 +66,10 @@ El uso excesivo de la tecnologia del resaltador de sintaxis podría generar una 
 Al ser una herramienta precisa reduce la necsidad de profesionales especializados en esta rama, teniendo repercusiones economicas/laborales para aquellos que ocupan dichos trabajos.
 
 ### 6. Poco contexto:
+[[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]]
+[[https://github.com/DavMDTheThird/RepoTC2037.601.git/ResaltadorSintaxis/Img1.jpg|alt=hola]]
+
+
 El uso de tecnologías basadas en sintáxis en codigo implica que es difícil saber qué es lo que es y qué no es, esto implica una confusion a la hora de identificar el significa de lo que se esta leyendo.
 
 En conclusión, es vital tener en cuenta estas implicaciones éticas para poder abordarlas de la mejor manera y evitar que la implementación de esta tecnología tenga consecuencias de las mismas, minimizando efectos negativos o errores.
