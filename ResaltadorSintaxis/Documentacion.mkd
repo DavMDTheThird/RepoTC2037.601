@@ -1,0 +1,35 @@
+# Resaltador de Sintáxis - DOCUMENTACIÓN
+
+
+### Names:
+- David Medina Domínguez (A01783155)
+- Angel Afonso Castellanos (A01782545)
+
+## Solucion Planteada:
+
+Reflexiona sobre la solución planteada, los algoritmos implementados y sobre el tiempo de ejecución de estos.
+Calcula la complejidad de tu algoritmo basada en el número de iteraciones y contrástala con el tiempo estimado en el punto anterior.
+Plasma en un breve reporte de una página (en formato Markdown) las conclusiones de tu reflexión en los puntos 6 y 7. Agrega además una breve reflexión sobre las implicaciones éticas que el tipo de tecnología que desarrollaste pudiera tener en la sociedad.
+<br>
+
+Con el uso y desarrollo de tecnología como un resultador de sintáxis puede presentar diversas implicaciones éticas en la sociedad, un ejemplo de ellas pueden ser las siguieentes:
+
+### 1. Seguridad y Privacidad: 
+Si el producto es utilizado en aplicaciones o plataformas web, puede existir el riesgo de que los datos de sintáxis de los usuarios sean recopilados y almacenados, lo cual implica la preocupacion sobre la privacidad de los individuos y existe la posibilidad de que estos datos sean utilizados de manera maliciosa o sean vulnerables a ataques cibernéticos.
+
+### 2. Discriminación: 
+Al tener una tecnología desarrollada por humanos y estas son entrenadas utilizando un gran conjunto de datos que tienen la posibilidad de contener algun sesgo cultural, resultando en malos resultados que impliquen la discriminación. Si se desarrollara con datos que implican estereotipos de cualquier tipo, podrian generar que se resalten algo que implique promover estos esterotipos.
+
+### 3. Barreras lingüisticas:
+El resaltador de sintáxis puede encontrarse con situaciones que limiten la interaccion con ciertos grupos regiones, en nuestro caso implicaria a aquellos grupos sociales que no tengan el mismo abecedario que los desarrolladores del código, sin poder tomar en cuenta las variaciones del dialecto, limitando la oportunidad de uso del programa.
+
+### 4. Dependencia:
+El uso excesivo de la tecnologia del resaltador de sintaxis podría generar una dependencia a la misma, confiarse demasiado de este tipo de herramientas que busca corregir la sintáxis podría evocar en la perdida de la capacidad de desarrollo y comprensión.
+
+### 5. Automatización de trabajo:
+Al ser una herramienta precisa reduce la necsidad de profesionales especializados en esta rama, teniendo repercusiones economicas/laborales para aquellos que ocupan dichos trabajos.
+
+### 6. Poco contexto:
+El uso de tecnologías basadas en sintáxis en codigo implica que es difícil saber qué es lo que es y qué no es, esto implica una confusion a la hora de identificar el significa de lo que se esta leyendo.
+
+En conclusión, es vital tener en cuenta estas implicaciones éticas para poder abordarlas de la mejor manera y evitar que la implementación de esta tecnología tenga consecuencias de las mismas, minimizando efectos negativos o errores.
