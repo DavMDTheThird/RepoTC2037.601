@@ -1,4 +1,4 @@
-# Resaltador de Sintáxis - DOCUMENTACIÓN
+# Resaltador de Sintáxis de un programa de Python - DOCUMENTACIÓN
 
 
 ### Names:
@@ -8,12 +8,131 @@
 ## Solucion Planteada:
 
 ```{elixir}
-codigo
+defmodule R do
+  @reserved_words ~r/^import|^False|^True|^if|^elif|^else|^for|^while|^break|^try|^catch|^def|^return|^class/ #Some reserved words
+  @operators ~r/^\+|^\-|^\*|^\/|^\%|^\=|^\=\=|^\!\=|^\<|^\>|^\<\=|^\>\=|^and|^or|^not|^in|^is/ # Some operators
+  @numbers ~r/^-?\d+|^-?\d+\.\d+|^-?\d+(\.\d+)?[eE][+-]?\d+/ #int,float,scientific numbers
+  @functions ~r/^print|^input|^len|^range|^open|^str|^int|^float|^list|^dict/ # Some built in functions
+  @punctuation ~r/^\(|^\)|^\[|^\]|^\{|^\}|^\:|^\,|^\./ # Some punctuations
+  @strings ~r/^".+"|^'.+'/ # Strings
+  @comments ~r/^#.*$/ # Comments
+  @spaces ~r/^\s+/ # White Spaces, tabs and newlines
+  @variables ~r/^[a-zA-Z_][a-zA-Z0-9_]*/ # Variable names in python
+
+  @st_html "\t\<span class\=\""
+  @md_html "\"\>"
+  @nd_html "\<\/span\>\n"
+  @html_st '<!DOCTYPE html>\n<html lang="en">\n<head>\n\t<meta charset="UTF-8">\n\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<link rel="stylesheet" href="../RETO/tests.css">\n\t<title>Test Resaltador de Python</title>\n</head>\n<body>\n'
+  @html_nd '</body>\n</html>'
+
+
+  def pylexic(in_filename, out_filename) do
+    {time, _result} = :timer.tc(fn ->
+    data = in_filename
+          |> File.stream!() # Read the file, line by line
+          |> Enum.map(&python_token(&1)) # Call a function with each line read
+          # |> Enum.to_list()
+          # |> IO.inspect()
+          |> Enum.join("\<br\>\n")
+
+    File.write(out_filename, Enum.join([@html_st, data, @html_nd])) # Store the results in a new file
+    end)
+    IO.puts("Tiempo de ejecucion: #{time} microsegundos")
+  end
+
+  defp python_token(line), do: do_python_token(line, [])
+
+  defp do_python_token("", rtline), do: Enum.reverse(rtline)
+
+  defp do_python_token(line, rtlist) do
+    cond do
+      Regex.match?(@spaces, line) -> # Eliminar espacios
+        line = Regex.replace(@spaces, line, "")
+        do_python_token(line, rtlist)
+
+
+      Regex.match?(@reserved_words, line) ->
+        match = Regex.run(@reserved_words, line, capture: :first)
+        line = Regex.replace(@reserved_words, line, "")
+        new_line = Enum.join([@st_html, "reserved_word", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@functions, line) ->
+        match = Regex.run(@functions, line, capture: :first)
+        line = Regex.replace(@functions, line, "")
+        new_line = Enum.join([@st_html, "function", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@punctuation, line) ->
+        match = Regex.run(@punctuation, line, capture: :first)
+        line = Regex.replace(@punctuation, line, "")
+        new_line = Enum.join([@st_html, "punctuation", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@strings, line) ->
+        match = Regex.run(@strings, line, capture: :first)
+        line = Regex.replace(@strings, line, "")
+        new_line = Enum.join([@st_html, "string", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@numbers, line) ->
+        match = Regex.run(@numbers, line, capture: :first)
+        line = Regex.replace(@numbers, line, "")
+        new_line = Enum.join([@st_html, "number", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@operators, line) ->
+        match = Regex.run(@operators, line, capture: :first)
+        line = Regex.replace(@operators, line, "")
+        new_line = Enum.join([@st_html, "operator", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@variables, line) ->
+        match = Regex.run(@variables, line, capture: :first)
+        line = Regex.replace(@variables, line, "")
+        new_line = Enum.join([@st_html, "variable", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+
+      Regex.match?(@comments, line) ->
+        match = Regex.run(@comments, line, capture: :first)
+        line = Regex.replace(@comments, line, "")
+        new_line = Enum.join([@st_html, "comment", @md_html, List.first(match), @nd_html])
+        do_python_token(line, [new_line|rtlist])
+
+      true ->
+        IO.puts("EL REGEX NO FUE ENCONTRADO")
+        IO.puts(line)
+        Enum.reverse(rtlist)
+
+    end
+
+  end
+
+end
 ```
 
-Reflexiona sobre la solución planteada, los algoritmos implementados y sobre el tiempo de ejecución de estos.
+# Punto 6
+[Imagen de Prueba #1](/ResaltadorSintaxis/Img1.jpg "Prueba 1")
+[Imagen de Prueba #2](/ResaltadorSintaxis/img2.jpg "Prueba 2")
+[Imagen de Prueba #3](/ResaltadorSintaxis/img3.jpg "Prueba 3")
+[Imagen de Prueba #4](/ResaltadorSintaxis/img4.jpg "Prueba 4")
+[Imagen de Prueba #5](/ResaltadorSintaxis/img5.jpg "Prueba 5")
+
+Como se puede observar de las imagenes previamente mencionadas, el tiempo de ejecusion se vio increiblemente cambiante, y por ende, no estable ni constante, haciendo este codigo algo inestable. Esto de puede apreciar al ver la diferencia de tiempos que existe en todas las pruebas del segundo archivo a correr la función.
+
+Esta impementación para justo resaltar el texto podemos ver que funciona a la perfeccion con los ejemplos dados, ya que no estamos incluyendo todas las posibles palabras reservadas y o operadores que existen, dado a que va mas allá de los fines de este proyecto. Algo que se puede resaltar es que no hay una correcta indentación del texto, haciendo así mismo el codigo de python inservible dado a que cuando se define una funcion o clase, se debe de indentar el codigo para saber que pertenece a dicha clase u función, lo cuál el html no provee.
+
+Los algoritmos implementados pueden totalmente ser mejorados, implementando mucho mejor el uso del "pipe operator" para no usar más memoria de almacenamiento de la debida al igual que ir modificando código dentro del mismo elemento. 
 
 
+# Punto 7
 A continuacion se presenta la complejidad de cada una de las funciones que fueron utilizadas en el desarrollo del resaltador de sintáxis.
 
 ### File.stream
@@ -46,6 +165,14 @@ La complejidad temporal es generalmente considerada como O(1), es decir, constan
 
 <br>
 
+## Complejidad final
+
+Dado a que usamos el map, y las funciones que llamamos cada iteracion del map son O(n), nuestro codigo termina teniendo una BIG O (n^2), por el uso de Enum.join, Regex.run, Regex.replace y Regex.match?.
+
+Dicho eso, viendo el tiempo inestable y las iteraciones que tiene que hacer, me hace razón que este un poco descontrolado el timepo de ejecución.
+
+<br>
+
 ## Implicaciones éticas
 
 Con el uso y desarrollo de tecnología como un resultador de sintáxis puede presentar diversas implicaciones éticas en la sociedad, un ejemplo de ellas pueden ser las siguieentes:
@@ -66,13 +193,9 @@ El uso excesivo de la tecnologia del resaltador de sintaxis podría generar una 
 Al ser una herramienta precisa reduce la necsidad de profesionales especializados en esta rama, teniendo repercusiones economicas/laborales para aquellos que ocupan dichos trabajos.
 
 ### 6. Poco contexto:
-[Imagen de Prueba #1](/ResaltadorSintaxis/Img1.jpg "Prueba 1")
-[Imagen de Prueba #2](/ResaltadorSintaxis/img2.jpg "Prueba 2")
-[Imagen de Prueba #3](/ResaltadorSintaxis/img3.jpg "Prueba 3")
-[Imagen de Prueba #4](/ResaltadorSintaxis/img4.jpg "Prueba 4")
-[Imagen de Prueba #5](/ResaltadorSintaxis/img5.jpg "Prueba 5")
-
-
 El uso de tecnologías basadas en sintáxis en codigo implica que es difícil saber qué es lo que es y qué no es, esto implica una confusion a la hora de identificar el significa de lo que se esta leyendo.
 
 En conclusión, es vital tener en cuenta estas implicaciones éticas para poder abordarlas de la mejor manera y evitar que la implementación de esta tecnología tenga consecuencias de las mismas, minimizando efectos negativos o errores.
+
+### 7. Pero:
+Como simple resaltador de texto, proviniendo de estudiantes y trabajadores en el sector de la computación, el que el editor reslate el texto para identificar valores, funciones, operadores y variables nos hace la vista más facil a la hora de leer y entender codigo. 
