@@ -3,7 +3,7 @@ import numpy as np
 
 def get_sightings(filename, focusanimal):
 
-	# Load table
+    # Load table
 	tab = pd.read_csv(filename)
 
 	# Find number of records and total count of animals seen
