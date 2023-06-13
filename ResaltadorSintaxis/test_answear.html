@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../RETO/tests.css">
+	<title>Test Resaltador de Python</title>
+</head>
+<body>
+	<span class="comment"># Archivo de preuba de python</span>
+<br>
+	<span class="comment">#0. Ejemplo librerias</span>
+<br>
+	<span class="reserved_word">import</span>
+	<span class="variable">math</span>
+<br>
+	<span class="comment">#1.Ejemplo Funciones</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">hola_mundo</span>
+	<span class="punctuation">(</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Hola mundo"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment">#2. Ejemplo Variables</span>
+<br>
+	<span class="variable">numero_0</span>
+	<span class="operator">=</span>
+	<span class="number">10</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">numero_A</span>
+	<span class="punctuation">(</span>
+	<span class="variable">numero_0</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">numero_0</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment">#3. Ejemplos Operadores Aritmeticos</span>
+<br>
+	<span class="variable">Numero_1</span>
+	<span class="operator">=</span>
+	<span class="number">5</span>
+<br>
+	<span class="variable">Numero_2</span>
+	<span class="operator">=</span>
+	<span class="number">2</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">suma</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="operator">+</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">resta</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="operator">-</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">multiplicacion</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="operator">*</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">division</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="operator">/</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">residuo</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">potencia</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="operator">*</span>
+	<span class="operator">*</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">division_entera</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Numero_1</span>
+	<span class="operator">/</span>
+	<span class="operator">/</span>
+	<span class="variable">Numero_2</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment">#4. Ejemplos de Operadores Relacionales</span>
+<br>
+	<span class="variable">Var</span>
+	<span class="operator">=</span>
+	<span class="number">10</span>
+<br>
+	<span class="variable">Var2</span>
+	<span class="operator">=</span>
+	<span class="number">5</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">mayor</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="reserved_word">if</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="operator">></span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Es mayor"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"No es mayor"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">menor</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="reserved_word">if</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="operator"><</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Es menor"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"No es menor"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">iguales</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="reserved_word">if</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="operator">=</span>
+	<span class="operator">=</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Son iguales"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"No son iguales"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">mayorIgual</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="reserved_word">if</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="operator">></span>
+	<span class="operator">=</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Es mayor o igual"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"No es mayor o igual"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">menorIgual</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="reserved_word">if</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="operator"><</span>
+	<span class="operator">=</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Es menor o igual"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"NO es menor igual"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="reserved_word">def</span>
+	<span class="variable">diferente</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="punctuation">,</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="reserved_word">if</span>
+	<span class="punctuation">(</span>
+	<span class="variable">Var</span>
+	<span class="operator">!=</span>
+	<span class="variable">Var2</span>
+	<span class="punctuation">)</span>
+	<span class="punctuation">:</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Son diferentes"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"No son diferentes"</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment">#5. Operadores bit a bit</span>
+<br>
+	<span class="variable">a</span>
+	<span class="operator">=</span>
+	<span class="number">10</span>
+	<span class="comment"># 1010 en binario</span>
+<br>
+	<span class="variable">b</span>
+	<span class="operator">=</span>
+	<span class="number">3</span>
+	<span class="comment"># 0011 en binario</span>
+<br>
+	<span class="operator">and</span>
+	<span class="variable">_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="operator">or</span>
+	<span class="variable">_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">xor_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">left_shift_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+	<span class="operator"><</span>
+	<span class="operator"><</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">right_shift_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+	<span class="operator">></span>
+	<span class="operator">></span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">complement_result</span>
+	<span class="operator">=</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"AND:"</span>
+	<span class="punctuation">,</span>
+	<span class="operator">and</span>
+	<span class="variable">_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"OR:"</span>
+	<span class="punctuation">,</span>
+	<span class="operator">or</span>
+	<span class="variable">_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"XOR:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">xor_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Left Shift:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">left_shift_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Right Shift:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">right_shift_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"Complement:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">complement_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment">#6. Operadores Asignacion</span>
+<br>
+	<span class="variable">a</span>
+	<span class="operator">=</span>
+	<span class="number">10</span>
+<br>
+	<span class="variable">b</span>
+	<span class="operator">=</span>
+	<span class="number">3</span>
+<br>
+	<span class="variable">c</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">c</span>
+	<span class="operator">+</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">d</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">d</span>
+	<span class="operator">-</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">e</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">e</span>
+	<span class="operator">*</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">f</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">f</span>
+	<span class="operator">/</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">g</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">g</span>
+	<span class="operator">/</span>
+	<span class="operator">/</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">h</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">h</span>
+	<span class="operator">%</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">i</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">i</span>
+	<span class="operator">*</span>
+	<span class="operator">*</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">j</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">j</span>
+	<span class="operator"><</span>
+	<span class="operator"><</span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">k</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">k</span>
+	<span class="operator">></span>
+	<span class="operator">></span>
+	<span class="operator">=</span>
+	<span class="variable">b</span>
+<br>
+	<span class="variable">l</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">l</span>
+<br>
+	<span class="variable">m</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">m</span>
+<br>
+	<span class="variable">n</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+<br>
+	<span class="variable">n</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"c:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">c</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"d:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">d</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"e:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">e</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"f:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">f</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"g:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">g</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"h:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">h</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"i:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">i</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"j:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">j</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"k:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">k</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"l:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">l</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"m:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">m</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"n:"</span>
+	<span class="punctuation">,</span>
+	<span class="variable">n</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment">#7. Operaodres Logicos</span>
+<br>
+	<span class="variable">a</span>
+	<span class="operator">=</span>
+	<span class="reserved_word">True</span>
+<br>
+	<span class="variable">b</span>
+	<span class="operator">=</span>
+	<span class="reserved_word">False</span>
+<br>
+	<span class="operator">and</span>
+	<span class="variable">_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+	<span class="operator">and</span>
+	<span class="variable">b</span>
+<br>
+	<span class="operator">or</span>
+	<span class="variable">_result</span>
+	<span class="operator">=</span>
+	<span class="variable">a</span>
+	<span class="operator">or</span>
+	<span class="variable">b</span>
+<br>
+	<span class="operator">not</span>
+	<span class="variable">_result</span>
+	<span class="operator">=</span>
+	<span class="operator">not</span>
+	<span class="variable">a</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"AND:"</span>
+	<span class="punctuation">,</span>
+	<span class="operator">and</span>
+	<span class="variable">_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"OR:"</span>
+	<span class="punctuation">,</span>
+	<span class="operator">or</span>
+	<span class="variable">_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="function">print</span>
+	<span class="punctuation">(</span>
+	<span class="string">"NOT:"</span>
+	<span class="punctuation">,</span>
+	<span class="operator">not</span>
+	<span class="variable">_result</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="comment"># Ejemplo de datos numericos</span>
+<br>
+	<span class="variable">entero</span>
+	<span class="operator">=</span>
+	<span class="number">10</span>
+<br>
+	<span class="variable">flotante</span>
+	<span class="operator">=</span>
+	<span class="number">3</span>
+	<span class="punctuation">.</span>
+	<span class="number">14</span>
+<br>
+	<span class="comment"># Ejemplo de datos booleanos</span>
+<br>
+	<span class="variable">despierto</span>
+	<span class="operator">=</span>
+	<span class="reserved_word">True</span>
+<br>
+	<span class="variable">jugando</span>
+	<span class="operator">=</span>
+	<span class="reserved_word">False</span>
+<br>
+	<span class="variable">cuenta</span>
+	<span class="operator">=</span>
+	<span class="variable">None</span>
+<br>
+	<span class="comment"># Ejemplos de cadena</span>
+<br>
+	<span class="variable">cadena1</span>
+	<span class="operator">=</span>
+	<span class="string">"Holi UwU"</span>
+<br>
+	<span class="comment"># Ejemplo de Estructuras</span>
+<br>
+	<span class="function">list</span>
+	<span class="variable">a</span>
+	<span class="operator">=</span>
+	<span class="punctuation">[</span>
+	<span class="number">1</span>
+	<span class="punctuation">,</span>
+	<span class="number">2</span>
+	<span class="punctuation">,</span>
+	<span class="number">3</span>
+	<span class="punctuation">]</span>
+<br>
+	<span class="variable">tuplas</span>
+	<span class="operator">=</span>
+	<span class="punctuation">(</span>
+	<span class="number">1</span>
+	<span class="punctuation">,</span>
+	<span class="number">2</span>
+	<span class="punctuation">,</span>
+	<span class="number">3</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="variable">conjunto</span>
+	<span class="operator">=</span>
+	<span class="punctuation">{</span>
+	<span class="number">1</span>
+	<span class="punctuation">,</span>
+	<span class="number">2</span>
+	<span class="punctuation">,</span>
+	<span class="number">3</span>
+	<span class="punctuation">}</span>
+<br>
+	<span class="variable">diccionario</span>
+	<span class="operator">=</span>
+	<span class="punctuation">{</span>
+	<span class="string">"clave": "valor"</span>
+	<span class="punctuation">}</span>
+<br>
+	<span class="comment"># Ejemplo de comentarios</span>
+<br>
+	<span class="variable">comentario</span>
+	<span class="operator">=</span>
+	<span class="string">"Comentario esta al lado mio"</span>
+	<span class="comment"># Esto es un comentario de una sola línea</span>
+<br>
+	<span class="variable">parentesis</span>
+	<span class="operator">=</span>
+	<span class="punctuation">(</span>
+	<span class="number">1</span>
+	<span class="punctuation">,</span>
+	<span class="number">2</span>
+	<span class="punctuation">,</span>
+	<span class="number">3</span>
+	<span class="punctuation">)</span>
+<br>
+	<span class="string">'''</span>
+<br>
+	<span class="variable">Este</span>
+	<span class="variable">es</span>
+	<span class="variable">un</span>
+	<span class="variable">comentario</span>
+<br>
+	<span class="variable">multilinea</span>
+<br>
+	<span class="string">'''</span>
+<br>
+	<span class="string">"""</span>
+<br>
+	<span class="variable">Este</span>
+	<span class="variable">tambi</span>
+<br>
+	<span class="variable">multilinea</span>
+<br>
+	<span class="string">"""</span>
+<br>
+	<span class="string">'''</span>
+<br>
+	<span class="string">'''</span>
+</body>
+</html>

@@ -1,0 +1,31 @@
+name: Ej1
+source code: |
+  # By: David Medina and Angel Afonso
+  input: '001100'
+  blank: ' '
+  start state: q1
+  table:
+    q1:
+      0: {write: x, R: q2}
+      x: {R: q1}
+      y: {R: scan}
+    q2:
+      [0,y]: R
+      1: {write: y, R: q3}
+    q3:
+      [1,x]: R
+      0: {write: x, L: back}
+    back:
+      [1,y,0,x]: L
+      ' ': {R: q1}
+    scan:
+      [x,y]: R
+      ' ': {R: accept}
+    accept:
+positions:
+  q1: {x: 433.3, y: 202.34}
+  q2: {x: 438.4, y: 343.07}
+  q3: {x: 295.54, y: 311.86, fixed: false}
+  back: {x: 286.24, y: 169.01}
+  scan: {x: 555.9, y: 247.62}
+  accept: {x: 544.23, y: 388.43, fixed: false}

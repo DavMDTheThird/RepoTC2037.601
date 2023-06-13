@@ -1,0 +1,37 @@
+name: ej2
+source code: |-
+  # By: David Medina and Angel Afonso
+  input: '00111100'
+  blank: ' '
+  start state: correctST
+  table:
+    correctST:
+      1: {write: D, R: FindED1}
+      0: {write: D, R: FindED0}
+      D: {R: done} 
+      
+    FindED1:
+      [0,1] : R
+      [D,' ']: {L: ED1}
+    FindED0:
+      [0,1] : R
+      [D,' ']: {L: ED0}
+      
+    ED1:
+      1: {write: D, L: FindST}
+    ED0:
+      0: {write: D, L: FindST}
+      
+    FindST:
+      [0,1]: L
+      D: {R: correctST}
+
+    done:
+positions:
+  correctST: {x: 373.01, y: 250.81, fixed: false}
+  FindED1: {x: 450, y: 376.12, fixed: false}
+  FindED0: {x: 442.23, y: 121.04, fixed: false}
+  ED1: {x: 305.79, y: 374.58, fixed: false}
+  ED0: {x: 298.39, y: 131.32, fixed: false}
+  FindST: {x: 221.96, y: 255.38}
+  done: {x: 519.13, y: 246.36, fixed: false}

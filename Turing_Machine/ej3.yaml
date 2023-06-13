@@ -1,0 +1,35 @@
+name: ej3
+source code: |-
+  # By: David Medina and Angel Afonso
+  input: '1111-11'
+  blank: ' '
+  start state: Find_minusR
+  table:
+    Find_minusR:
+      [1] : R
+      -: {R: FindED}
+    
+    FindED:
+      [1] : R
+      ' ': {L: minous?}
+    minous?:
+      -: {write: ' ', R: done}
+      1: {write: ' ', L: Find_minusL}
+    Find_minusL:
+      [1] : L
+      -: {L: FindST}
+    FindST:
+      [1] : L
+      ' ': {R: substract}
+    substract:
+      1: {write: ' ', R: Find_minusR}
+      
+    done:
+positions:
+  Find_minusR: {x: 200.08, y: 240.64}
+  FindED: {x: 274.05, y: 360.46}
+  minous?: {x: 394.58, y: 360.98}
+  Find_minusL: {x: 481.59, y: 230.52}
+  FindST: {x: 399.84, y: 113.17}
+  substract: {x: 287.74, y: 110.36}
+  done: {x: 348, y: 233.42}
