@@ -1,24 +1,18 @@
-defmodule Primes do
-
-  def is_prime(n) when n <= 1, do: false
-
-  def is_prime(n) when rem(n, 2) == 0, do: n == 2
-
-  def is_prime(n) do
-    Enum.all?(2..trunc(:math.sqrt(n)), fn(x) -> rem(n, x) != 0 end)
+defmodule Hw.Primes do
+  def sum_primes(limite) do
+    Enum.sum(primos(limite))
   end
 
-  def sum_primes_sequential(n) do
-    Enum.filter(2..n, &is_prime/1)
-    |> Enum.sum()
+  defp primos(limite) do
+    Enum.filter(2..limite, &es_primo/1)
   end
 
+  defp es_primo(numero) do
+    Enum.all?(2..(div(numero, 2)), fn(divisor) -> rem(numero, divisor) != 0 end)
+  end
 end
 
 # Uso del programa
-start_time = :os.system_time(:millisecond)
-result = Primes.sum_primes_sequential(5_000_000)
-end_time = :os.system_time(:millisecond)
-execution_time = end_time - start_time
-
-IO.puts "La suma de los números primos menores a 5,000,000 es #{result}. y se realizó en #{execution_time}."
+limite = 1000000
+suma = Hw.Primes.sum_primes(limite)
+IO.puts("La suma de todos los primos menores a #{limite} es: #{suma}")
