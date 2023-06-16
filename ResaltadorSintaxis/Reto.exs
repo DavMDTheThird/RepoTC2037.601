@@ -8,34 +8,39 @@
 
 defmodule R do
   @reserved_words ~r/^import|^False|^True|^if|^elif|^else|^for|^while|^break|^try|^catch|^def|^return|^class/ #Some reserved words
-  @operators ~r/^\+|^\-|^\*|^\/|^\%|^\=|^\=\=|^\!\=|^\<|^\>|^\<\=|^\>\=|^and|^or|^not|^in|^is/ # Some operators
+  @operators ~r/^\+|^\-|^\*|^\/|^\%|^\=|^\=\=|^\!\=|^\<|^\>|^\<\=|^\>\=|^and|^or|^not|^in|^is|^&/ # Some operators
   @numbers ~r/^-?\d+|^-?\d+\.\d+|^-?\d+(\.\d+)?[eE][+-]?\d+/ #int,float,scientific numbers
   @functions ~r/^print|^input|^len|^range|^open|^str|^int|^float|^list|^dict/ # Some built in functions
   @punctuation ~r/^\(|^\)|^\[|^\]|^\{|^\}|^\:|^\,|^\./ # Some punctuations
-  @strings ~r/^".+"|^'.+'/ # Strings
+  @strings ~r/^".+"|^'.+'|^''|^""/ # Strings
   @comments ~r/^#.*$/ # Comments
   @spaces ~r/^\s+/ # White Spaces, tabs and newlines
   @variables ~r/^[a-zA-Z_][a-zA-Z0-9_]*/ # Variable names in python
 
-  @st_html "\t\<span class\=\""
+  @st_html "\<span class\=\""
   @md_html "\"\>"
-  @nd_html "\<\/span\>\n"
-  @html_st '<!DOCTYPE html>\n<html lang="en">\n<head>\n\t<meta charset="UTF-8">\n\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<link rel="stylesheet" href="../RETO/tests.css">\n\t<title>Test Resaltador de Python</title>\n</head>\n<body>\n'
-  @html_nd '</body>\n</html>'
+  @nd_html "\<\/span\>"
+  @html_st '<!DOCTYPE html>\n<html lang="en">\n<head>\n\t<meta charset="UTF-8">\n\t<meta http-equiv="X-UA-Compatible" content="IE=edge">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<link rel="stylesheet" href="/ResaltadorSintaxis/tests.css">\n\t<title>Test Resaltador de Python</title>\n</head>\n<body>\n<pre>\n'
+  @html_nd '<pre>\n</body>\n</html>'
 
 
-  def pylexic(in_filename, out_filename) do
+  def parallel_pylexic(list) do
+    Enum.map(list, &Task.async(fn -> pylexic(&1) end))
+    |> Enum.map(&Task.await(&1, 30_000_000))
+  end
+
+  def pylexic({in_filename, out_filename}) do
     {time, _result} = :timer.tc(fn ->
     data = in_filename
           |> File.stream!() # Read the file, line by line
           |> Enum.map(&python_token(&1)) # Call a function with each line read
           # |> Enum.to_list()
           # |> IO.inspect()
-          |> Enum.join("\<br\>\n")
+          |> Enum.join("")
 
     File.write(out_filename, Enum.join([@html_st, data, @html_nd])) # Store the results in a new file
     end)
-    IO.puts("Tiempo de ejecucion: #{time} microsegundos")
+    IO.puts("Tiempo de ejecucion de #{in_filename}: #{time/1_000_000} segundos")
   end
 
   defp python_token(line), do: do_python_token(line, [])
@@ -44,10 +49,14 @@ defmodule R do
 
   defp do_python_token(line, rtlist) do
     cond do
-      Regex.match?(@spaces, line) -> # Eliminar espacios
+      # Regex.match?(@spaces, line) -> # Eliminar espacios
+      #   line = Regex.replace(@spaces, line, "")
+      #   do_python_token(line, [new_line|rtlist])
+      Regex.match?(@spaces, line) ->
+        match = Regex.run(@spaces, line, capture: :first)
         line = Regex.replace(@spaces, line, "")
-        do_python_token(line, rtlist)
-
+        new_line = Enum.join([match])
+        do_python_token(line, [new_line|rtlist])
 
       Regex.match?(@reserved_words, line) ->
         match = Regex.run(@reserved_words, line, capture: :first)
@@ -115,6 +124,10 @@ defmodule R do
 
 end
 
-# R.pylexic("test1.py","test1_answear.html")
-# R.pylexic("test2.py","test2_answear.html")
-# R.pylexic("test3.py","test3_answear.html")
+# pylexic_list = [{"test1.py","test1_answear.html"}, {"test2.py","test2_answear.html"}, {"test3.py","test3_answear.html"}, {"test4.py","test4_answear.html"}]
+# R.parallel_pylexic(pylexic_list)
+
+# R.pylexic({"test1.py","test1_answear.html"})
+# R.pylexic({"test2.py","test2_answear.html"})
+# R.pylexic({"test3.py","test3_answear.html"})
+# R.pylexic({"test4.py","test4_answear.html"})

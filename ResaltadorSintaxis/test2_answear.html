@@ -4,437 +4,84 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../RETO/tests.css">
+	<link rel="stylesheet" href="/ResaltadorSintaxis/tests.css">
 	<title>Test Resaltador de Python</title>
 </head>
 <body>
-	<span class="comment"># Esta es la prueba que va a pasar por el expresiones regulares</span>
-<br>
-	<span class="reserved_word">import</span>
-	<span class="variable">math</span>
-<br>
-<br>
-	<span class="comment"># Print "Hello World"</span>
-<br>
-	<span class="variable">Greetings</span>
-	<span class="operator">=</span>
-	<span class="string">"Hola mundo"</span>
-<br>
-	<span class="function">print</span>
-	<span class="punctuation">(</span>
-	<span class="variable">Greetings</span>
-	<span class="punctuation">)</span>
-<br>
-<br>
-	<span class="comment"># print the numbers from 1 to 10</span>
-<br>
-	<span class="reserved_word">for</span>
-	<span class="variable">i</span>
-	<span class="operator">in</span>
-	<span class="function">range</span>
-	<span class="punctuation">(</span>
-	<span class="number">10</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="function">print</span>
-	<span class="punctuation">(</span>
-	<span class="variable">i</span>
-	<span class="punctuation">)</span>
-<br>
-<br>
-	<span class="comment"># Create a binary tree, with insert and search methods</span>
-<br>
-	<span class="reserved_word">class</span>
-	<span class="variable">Tree</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">__init__</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="operator">=</span>
-	<span class="variable">None</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="operator">=</span>
-	<span class="variable">None</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">value</span>
-	<span class="operator">=</span>
-	<span class="variable">value</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="operator">in</span>
-	<span class="variable">sert</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">value</span>
-	<span class="operator"><</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">value</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="operator">is</span>
-	<span class="variable">None</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="operator">=</span>
-	<span class="variable">Tree</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-<br>
-	<span class="reserved_word">else</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="punctuation">.</span>
-	<span class="operator">in</span>
-	<span class="variable">sert</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-<br>
-	<span class="reserved_word">else</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="operator">is</span>
-	<span class="variable">None</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="operator">=</span>
-	<span class="variable">Tree</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-<br>
-	<span class="reserved_word">else</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="punctuation">.</span>
-	<span class="operator">in</span>
-	<span class="variable">sert</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">search</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">value</span>
-	<span class="operator"><</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">value</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="operator">is</span>
-	<span class="variable">None</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="function">str</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="operator">+</span>
-	<span class="string">" Not Found"</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="punctuation">.</span>
-	<span class="variable">search</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-<br>
-	<span class="reserved_word">elif</span>
-	<span class="variable">value</span>
-	<span class="operator">></span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">value</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="operator">is</span>
-	<span class="variable">None</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="function">str</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="operator">+</span>
-	<span class="string">" Not Found"</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="punctuation">.</span>
-	<span class="variable">search</span>
-	<span class="punctuation">(</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-<br>
-	<span class="reserved_word">else</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="function">str</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="operator">+</span>
-	<span class="string">' is found'</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="function">print</span>
-	<span class="variable">_tree</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">left</span>
-	<span class="punctuation">.</span>
-	<span class="function">print</span>
-	<span class="variable">_tree</span>
-	<span class="punctuation">(</span>
-	<span class="punctuation">)</span>
-<br>
-	<span class="function">print</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">value</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">,</span>
-<br>
-	<span class="reserved_word">if</span>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">self</span>
-	<span class="punctuation">.</span>
-	<span class="variable">right</span>
-	<span class="punctuation">.</span>
-	<span class="function">print</span>
-	<span class="variable">_tree</span>
-	<span class="punctuation">(</span>
-	<span class="punctuation">)</span>
-<br>
-<br>
-	<span class="comment"># Create a basic calculator class</span>
-<br>
-	<span class="reserved_word">class</span>
-	<span class="variable">Calculator</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">__init__</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="variable">pass</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">add</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">,</span>
-	<span class="variable">b</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">a</span>
-	<span class="operator">+</span>
-	<span class="variable">b</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">subtract</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">,</span>
-	<span class="variable">b</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">a</span>
-	<span class="operator">-</span>
-	<span class="variable">b</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">multiply</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">,</span>
-	<span class="variable">b</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">a</span>
-	<span class="operator">*</span>
-	<span class="variable">b</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">divide</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">,</span>
-	<span class="variable">b</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">a</span>
-	<span class="operator">/</span>
-	<span class="variable">b</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">power</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">,</span>
-	<span class="variable">b</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">math</span>
-	<span class="punctuation">.</span>
-	<span class="variable">pow</span>
-	<span class="punctuation">(</span>
-	<span class="variable">a</span>
-	<span class="punctuation">,</span>
-	<span class="variable">b</span>
-	<span class="punctuation">)</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">square_root</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">math</span>
-	<span class="punctuation">.</span>
-	<span class="variable">sqrt</span>
-	<span class="punctuation">(</span>
-	<span class="variable">a</span>
-	<span class="punctuation">)</span>
-<br>
-<br>
-	<span class="reserved_word">def</span>
-	<span class="variable">toFloat</span>
-	<span class="punctuation">(</span>
-	<span class="variable">self</span>
-	<span class="punctuation">,</span>
-	<span class="variable">a</span>
-	<span class="punctuation">)</span>
-	<span class="punctuation">:</span>
-<br>
-	<span class="reserved_word">return</span>
-	<span class="variable">a</span>
-	<span class="operator">/</span>
-	<span class="number">1</span>
-	<span class="punctuation">.</span>
-	<span class="number">0</span>
+<pre>
+<span class="comment"># Esta es la prueba que va a pasar por el expresiones regulares</span>
+<span class="reserved_word">import</span> <span class="variable">math</span>
+
+<span class="comment"># Print "Hello World"</span>
+<span class="variable">Greetings</span> <span class="operator">=</span> <span class="string">"Hola mundo"</span>
+<span class="function">print</span><span class="punctuation">(</span><span class="variable">Greetings</span><span class="punctuation">)</span>
+
+<span class="comment"># print the numbers from 1 to 10</span>
+<span class="reserved_word">for</span> <span class="variable">i</span> <span class="operator">in</span> <span class="function">range</span><span class="punctuation">(</span><span class="number">10</span><span class="punctuation">)</span><span class="punctuation">:</span>
+    <span class="function">print</span><span class="punctuation">(</span><span class="variable">i</span><span class="punctuation">)</span>
+
+<span class="comment"># Create a binary tree, with insert and search methods</span>
+<span class="reserved_word">class</span> <span class="variable">Tree</span><span class="punctuation">:</span>
+    <span class="reserved_word">def</span> <span class="variable">__init__</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">value</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span> <span class="operator">=</span> <span class="variable">None</span>
+        <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span> <span class="operator">=</span> <span class="variable">None</span>
+        <span class="variable">self</span><span class="punctuation">.</span><span class="variable">value</span> <span class="operator">=</span> <span class="variable">value</span>
+
+    <span class="reserved_word">def</span> <span class="operator">in</span><span class="variable">sert</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">value</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">if</span> <span class="variable">value</span> <span class="operator"><</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">value</span><span class="punctuation">:</span>
+            <span class="reserved_word">if</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span> <span class="operator">is</span> <span class="variable">None</span><span class="punctuation">:</span>
+                <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span> <span class="operator">=</span> <span class="variable">Tree</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span>
+            <span class="reserved_word">else</span><span class="punctuation">:</span>
+                <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span><span class="punctuation">.</span><span class="operator">in</span><span class="variable">sert</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span>
+        <span class="reserved_word">else</span><span class="punctuation">:</span>
+            <span class="reserved_word">if</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span> <span class="operator">is</span> <span class="variable">None</span><span class="punctuation">:</span>
+                <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span> <span class="operator">=</span> <span class="variable">Tree</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span>
+            <span class="reserved_word">else</span><span class="punctuation">:</span>
+                <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span><span class="punctuation">.</span><span class="operator">in</span><span class="variable">sert</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span>
+
+    <span class="reserved_word">def</span> <span class="variable">search</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">value</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">if</span> <span class="variable">value</span> <span class="operator"><</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">value</span><span class="punctuation">:</span>
+            <span class="reserved_word">if</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span> <span class="operator">is</span> <span class="variable">None</span><span class="punctuation">:</span>
+                <span class="reserved_word">return</span> <span class="function">str</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="string">" Not Found"</span>
+            <span class="reserved_word">return</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span><span class="punctuation">.</span><span class="variable">search</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span>
+        <span class="reserved_word">elif</span> <span class="variable">value</span> <span class="operator">></span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">value</span><span class="punctuation">:</span>
+            <span class="reserved_word">if</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span> <span class="operator">is</span> <span class="variable">None</span><span class="punctuation">:</span>
+                <span class="reserved_word">return</span> <span class="function">str</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="string">" Not Found"</span>
+            <span class="reserved_word">return</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span><span class="punctuation">.</span><span class="variable">search</span><span class="punctuation">(</span><span class="variable">value</span><span class="punctuation">)</span>
+        <span class="reserved_word">else</span><span class="punctuation">:</span>
+            <span class="reserved_word">return</span> <span class="function">str</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">.</span><span class="variable">value</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="string">' is found'</span>
+        
+    <span class="reserved_word">def</span> <span class="function">print</span><span class="variable">_tree</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">if</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span><span class="punctuation">:</span>
+            <span class="variable">self</span><span class="punctuation">.</span><span class="variable">left</span><span class="punctuation">.</span><span class="function">print</span><span class="variable">_tree</span><span class="punctuation">(</span><span class="punctuation">)</span>
+        <span class="function">print</span><span class="punctuation">(</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">value</span><span class="punctuation">)</span><span class="punctuation">,</span>
+        <span class="reserved_word">if</span> <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span><span class="punctuation">:</span>
+            <span class="variable">self</span><span class="punctuation">.</span><span class="variable">right</span><span class="punctuation">.</span><span class="function">print</span><span class="variable">_tree</span><span class="punctuation">(</span><span class="punctuation">)</span>
+
+<span class="comment"># Create a basic calculator class</span>
+<span class="reserved_word">class</span> <span class="variable">Calculator</span><span class="punctuation">:</span>
+    <span class="reserved_word">def</span> <span class="variable">__init__</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="variable">pass</span>
+
+    <span class="reserved_word">def</span> <span class="variable">add</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">,</span> <span class="variable">b</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">a</span> <span class="operator">+</span> <span class="variable">b</span>
+
+    <span class="reserved_word">def</span> <span class="variable">subtract</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">,</span> <span class="variable">b</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">a</span> <span class="operator">-</span> <span class="variable">b</span>
+    
+    <span class="reserved_word">def</span> <span class="variable">multiply</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">,</span> <span class="variable">b</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">a</span> <span class="operator">*</span> <span class="variable">b</span>
+    
+    <span class="reserved_word">def</span> <span class="variable">divide</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">,</span> <span class="variable">b</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">a</span> <span class="operator">/</span> <span class="variable">b</span>
+    
+    <span class="reserved_word">def</span> <span class="variable">power</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">,</span> <span class="variable">b</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">math</span><span class="punctuation">.</span><span class="variable">pow</span><span class="punctuation">(</span><span class="variable">a</span><span class="punctuation">,</span> <span class="variable">b</span><span class="punctuation">)</span>
+    
+    <span class="reserved_word">def</span> <span class="variable">square_root</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">math</span><span class="punctuation">.</span><span class="variable">sqrt</span><span class="punctuation">(</span><span class="variable">a</span><span class="punctuation">)</span>
+    
+    <span class="reserved_word">def</span> <span class="variable">toFloat</span><span class="punctuation">(</span><span class="variable">self</span><span class="punctuation">,</span> <span class="variable">a</span><span class="punctuation">)</span><span class="punctuation">:</span>
+        <span class="reserved_word">return</span> <span class="variable">a</span> <span class="operator">/</span> <span class="number">1</span><span class="punctuation">.</span><span class="number">0</span><pre>
 </body>
 </html>
