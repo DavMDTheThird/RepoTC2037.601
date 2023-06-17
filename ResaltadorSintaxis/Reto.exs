@@ -124,10 +124,14 @@ defmodule R do
 
 end
 
-# pylexic_list = [{"test1.py","test1_answear.html"}, {"test2.py","test2_answear.html"}, {"test3.py","test3_answear.html"}, {"test4.py","test4_answear.html"}]
+# pylexic_list = [{"test1.py","test1_answear.html"}, {"test2.py","test2_answear.html"}, {"test3.py","test3_answear.html"}, {"test4.py","test4_answear.html"}, {"test5.py","test5_answear.html"}]
+# :timer.tc(fn -> R.parallel_pylexic(pylexic_list) end) |> elem(0) |> Kernel./(1_000_000)
 # R.parallel_pylexic(pylexic_list)
+
+
 
 # R.pylexic({"test1.py","test1_answear.html"})
 # R.pylexic({"test2.py","test2_answear.html"})
 # R.pylexic({"test3.py","test3_answear.html"})
 # R.pylexic({"test4.py","test4_answear.html"})
+# R.pylexic({"test5.py","test5_answear.html"})
